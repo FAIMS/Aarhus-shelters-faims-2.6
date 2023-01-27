@@ -20,21 +20,183 @@
           <!--END: Style-->
           <User>
             <User>
-              <Select_User/>
+              <User/>
             </User>
           </User>
-          <Control>
+          <Start>
             <Main>
-              <New_Record/>
+              <Create_new_Feature/>
+              <Next_Feature_ID/>
+              <GPS_Diagnostics/>
             </Main>
-          </Control>
-          <Record>
-            <Record>
-              <Hello_World/>
-            </Record>
-          </Record>
+            <Search>
+              <Colgroup_0>
+                <Col_0>
+                  <Search_Term/>
+                </Col_0>
+                <Col_1>
+                  <Search_Button/>
+                </Col_1>
+              </Colgroup_0>
+              <Colgroup_1>
+                <Col_0>
+                  <Entity_Types/>
+                </Col_0>
+                <Col_1>
+                  <Select_Author/>
+                </Col_1>
+              </Colgroup_1>
+              <Entity_List/>
+            </Search>
+            <Map>
+              <Map/>
+              <Colgroup_1>
+                <Col_1>
+                  <Center_Me_1/>
+                </Col_1>
+                <Col_2>
+                  <Save_Map_Settings_1/>
+                </Col_2>
+              </Colgroup_1>
+              <Create_Shape/>
+            </Map>
+          </Start>
+          <Shelter>
+            <General>
+              <Shelter_author/>
+              <Shelter_timestamp/>
+              <Guide_1/>
+              <Feature_ID/>
+              <Feature_Source/>
+              <Feature_Type/>
+              <Guide_2/>
+              <Belongs_to_Shelter_Subtype/>
+              <Feature_description/>
+              <Take_GPS_Point_at_The_Top_of_Entryway/>
+              <GPS_Points_at_The_Top_of_Entryway/>
+              <Landuse_on_top/>
+              <Landuse_around/>
+              <Overview_Photo/>
+              <Overview_Photo_Button_1/>
+              <Locale_Description/>
+            </General>
+            <Access>
+              <Shelter_elements/>
+              <Entryway/>
+              <Entryway_type/>
+              <Accessiblity_of_Shelter_During_Visit/>
+              <Entryway_Direction/>
+              <Comments_on_Entryway/>
+              <Take_GPS_Point_at_The_Bottom_of_Entryway/>
+              <GPS_Points_at_The_Bottom_of_Entryway/>
+              <Entryway_Photo/>
+              <Entryway_Photo_Button_1/>
+              <Emergency_Exit/>
+              <Emergency_Exit_Shape/>
+              <Emergency_Exit_Location/>
+              <Notes_on_Emergency_Exit/>
+              <Take_GPS_Point_at_Emergency_Exit/>
+              <GPS_Points_at_Emergency_Exit/>
+              <Emergency_Exit_Photo/>
+              <Emergency_Exit_Photo_Button_1/>
+              <Distance_from_Swan_neck_to_Emergency_Exit_m/>
+            </Access>
+            <Interior>
+              <Interior_Description/>
+              <Comments_and_Recommendations/>
+            </Interior>
+          </Shelter>
+          <Shape>
+            <Shape_Note>
+              <Label/>
+              <Note/>
+            </Shape_Note>
+          </Shape>
+          <GPS_Point_at_The_Top_of_Entryway>
+            <GPS_Point_at_The_Top_of_Entryway>
+              <Colgroup_1>
+                <Col_1>
+                  <Latitude/>
+                </Col_1>
+                <Col_2>
+                  <Longitude/>
+                </Col_2>
+              </Colgroup_1>
+              <Colgroup_2>
+                <Col_1>
+                  <Northing/>
+                </Col_1>
+                <Col_2>
+                  <Easting/>
+                </Col_2>
+                <Col_3>
+                  <Accuracy/>
+                </Col_3>
+              </Colgroup_2>
+              <Take_From_GPS_1/>
+            </GPS_Point_at_The_Top_of_Entryway>
+            <Hidden>
+              <ID/>
+            </Hidden>
+          </GPS_Point_at_The_Top_of_Entryway>
+          <GPS_Point_at_The_Bottom_of_Entryway>
+            <GPS_Point_at_The_Bottom_of_Entryway>
+              <Colgroup_1>
+                <Col_1>
+                  <Latitude/>
+                </Col_1>
+                <Col_2>
+                  <Longitude/>
+                </Col_2>
+              </Colgroup_1>
+              <Colgroup_2>
+                <Col_1>
+                  <Northing/>
+                </Col_1>
+                <Col_2>
+                  <Easting/>
+                </Col_2>
+                <Col_3>
+                  <Accuracy/>
+                </Col_3>
+              </Colgroup_2>
+              <Take_From_GPS_1/>
+            </GPS_Point_at_The_Bottom_of_Entryway>
+            <Hidden>
+              <ID/>
+            </Hidden>
+          </GPS_Point_at_The_Bottom_of_Entryway>
+          <GPS_Point_at_Emergency_Exit>
+            <GPS_Point_at_Emergency_Exit>
+              <Colgroup_1>
+                <Col_1>
+                  <Latitude/>
+                </Col_1>
+                <Col_2>
+                  <Longitude/>
+                </Col_2>
+              </Colgroup_1>
+              <Colgroup_2>
+                <Col_1>
+                  <Northing/>
+                </Col_1>
+                <Col_2>
+                  <Easting/>
+                </Col_2>
+                <Col_3>
+                  <Accuracy/>
+                </Col_3>
+              </Colgroup_2>
+              <Take_From_GPS_1/>
+            </GPS_Point_at_Emergency_Exit>
+            <Hidden>
+              <ID/>
+            </Hidden>
+          </GPS_Point_at_Emergency_Exit>
         </faims>
       </instance>
+      <bind nodeset="/faims/Start/Main/Next_Feature_ID" type="decimal"/>
+      <bind nodeset="/faims/Shelter/Access/Distance_from_Swan_neck_to_Emergency_Exit_m" type="decimal"/>
     </model>
   </h:head>
   <h:body>
@@ -65,8 +227,8 @@
       <label>{User}</label>
       <group ref="User" faims_scrollable="false">
         <label>{User}</label>
-        <select1 appearance="compact" ref="Select_User">
-          <label>{Select_User}</label>
+        <select1 appearance="compact" ref="User">
+          <label>{User}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
@@ -74,21 +236,442 @@
         </select1>
       </group>
     </group>
-    <group ref="Control">
-      <label>{Control}</label>
+    <group ref="Start">
+      <label>{Start}</label>
       <group ref="Main">
         <label>{Main}</label>
-        <trigger ref="New_Record">
-          <label>{New_Record}</label>
+        <trigger ref="Create_new_Feature">
+          <label>{Create_new_Feature}</label>
+        </trigger>
+        <input ref="Next_Feature_ID" faims_style_class="required">
+          <label>{Next_Feature_ID}</label>
+        </input>
+        <input faims_read_only="true" ref="GPS_Diagnostics">
+          <label>{GPS_Diagnostics}</label>
+        </input>
+      </group>
+      <group ref="Search" faims_scrollable="false">
+        <label>{Search}</label>
+        <group ref="Colgroup_0" faims_style="orientation">
+          <label/>
+          <group ref="Col_0" faims_style="even">
+            <label/>
+            <input ref="Search_Term">
+              <label>{Search_Term}</label>
+            </input>
+          </group>
+          <group ref="Col_1" faims_style="large">
+            <label/>
+            <trigger ref="Search_Button">
+              <label>{Search_Button}</label>
+            </trigger>
+          </group>
+        </group>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_0" faims_style="even">
+            <label/>
+            <select1 ref="Entity_Types">
+              <label>{Entity_Types}</label>
+              <item>
+                <label>Options not loaded</label>
+                <value>Options not loaded</value>
+              </item>
+            </select1>
+          </group>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <select1 ref="Select_Author">
+              <label>{Select_Author}</label>
+              <item>
+                <label>Options not loaded</label>
+                <value>Options not loaded</value>
+              </item>
+            </select1>
+          </group>
+        </group>
+        <select1 appearance="compact" ref="Entity_List">
+          <label>{Entity_List}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+      </group>
+      <group ref="Map" faims_scrollable="false">
+        <label>{Map}</label>
+        <input faims_map="true" ref="Map">
+          <label>{Map}</label>
+        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <trigger ref="Center_Me_1">
+              <label>{Center_Me_1}</label>
+            </trigger>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <trigger ref="Save_Map_Settings_1">
+              <label>{Save_Map_Settings_1}</label>
+            </trigger>
+          </group>
+        </group>
+        <trigger ref="Create_Shape">
+          <label>{Create_Shape}</label>
         </trigger>
       </group>
     </group>
-    <group ref="Record" faims_archent_type="Record">
-      <label>{Record}</label>
-      <group ref="Record">
-        <label>{Record}</label>
-        <input faims_attribute_name="Hello World" faims_attribute_type="measure" ref="Hello_World">
-          <label>{Hello_World}</label>
+    <group ref="Shelter" faims_archent_type="Shelter">
+      <label>{Shelter}</label>
+      <group ref="General">
+        <label>{General}</label>
+        <input faims_attribute_name="Shelter author" faims_attribute_type="measure" ref="Shelter_author" faims_read_only="true">
+          <label>{Shelter_author}</label>
+        </input>
+        <input faims_attribute_name="Shelter timestamp" faims_attribute_type="measure" ref="Shelter_timestamp" faims_read_only="true">
+          <label>{Shelter_timestamp}</label>
+        </input>
+        <input faims_web="true" ref="Guide_1">
+          <label/>
+        </input>
+        <input faims_attribute_name="Feature ID" faims_attribute_type="measure" ref="Feature_ID" faims_style_class="required">
+          <label>{Feature_ID}</label>
+        </input>
+        <select1 faims_attribute_name="Feature Source" faims_attribute_type="vocab" ref="Feature_Source">
+          <label>{Feature_Source}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 type="image" faims_attribute_name="Feature Type" faims_attribute_type="vocab" ref="Feature_Type" faims_style_class="required">
+          <label>{Feature_Type}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <input faims_web="true" ref="Guide_2">
+          <label/>
+        </input>
+        <select1 faims_attribute_name="Belongs to Shelter Subtype" faims_attribute_type="vocab" ref="Belongs_to_Shelter_Subtype">
+          <label>{Belongs_to_Shelter_Subtype}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <input faims_attribute_name="Feature description" faims_attribute_type="measure" ref="Feature_description">
+          <label>{Feature_description}</label>
+        </input>
+        <trigger ref="Take_GPS_Point_at_The_Top_of_Entryway">
+          <label>{Take_GPS_Point_at_The_Top_of_Entryway}</label>
+        </trigger>
+        <select1 ref="GPS_Points_at_The_Top_of_Entryway">
+          <label>{GPS_Points_at_The_Top_of_Entryway}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 faims_attribute_name="Landuse on top" faims_attribute_type="vocab" ref="Landuse_on_top" faims_style_class="required">
+          <label>{Landuse_on_top}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 faims_attribute_name="Landuse around" faims_attribute_type="vocab" ref="Landuse_around">
+          <label>{Landuse_around}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select faims_sync="true" type="camera" faims_attribute_name="Overview Photo" faims_attribute_type="measure" ref="Overview_Photo" faims_style_class="required">
+          <label>{Overview_Photo}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Overview_Photo_Button_1">
+          <label>{Overview_Photo_Button_1}</label>
+        </trigger>
+        <input faims_attribute_name="Locale Description" faims_attribute_type="measure" ref="Locale_Description">
+          <label>{Locale_Description}</label>
+        </input>
+      </group>
+      <group ref="Access">
+        <label>{Access}</label>
+        <input faims_attribute_name="Shelter elements" faims_attribute_type="measure" ref="Shelter_elements">
+          <label>{Shelter_elements}</label>
+        </input>
+        <input faims_attribute_name="Entryway" faims_attribute_type="measure" ref="Entryway">
+          <label>{Entryway}</label>
+        </input>
+        <select1 faims_attribute_name="Entryway type" faims_attribute_type="vocab" ref="Entryway_type">
+          <label>{Entryway_type}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 faims_attribute_name="Accessiblity of Shelter During Visit" faims_attribute_type="vocab" ref="Accessiblity_of_Shelter_During_Visit">
+          <label>{Accessiblity_of_Shelter_During_Visit}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 faims_attribute_name="Entryway Direction" faims_attribute_type="vocab" ref="Entryway_Direction" faims_style_class="required">
+          <label>{Entryway_Direction}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <input faims_attribute_name="Comments on Entryway" faims_attribute_type="measure" ref="Comments_on_Entryway">
+          <label>{Comments_on_Entryway}</label>
+        </input>
+        <trigger ref="Take_GPS_Point_at_The_Bottom_of_Entryway">
+          <label>{Take_GPS_Point_at_The_Bottom_of_Entryway}</label>
+        </trigger>
+        <select1 ref="GPS_Points_at_The_Bottom_of_Entryway">
+          <label>{GPS_Points_at_The_Bottom_of_Entryway}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select faims_sync="true" type="camera" faims_attribute_name="Entryway Photo" faims_attribute_type="measure" ref="Entryway_Photo">
+          <label>{Entryway_Photo}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Entryway_Photo_Button_1">
+          <label>{Entryway_Photo_Button_1}</label>
+        </trigger>
+        <input faims_attribute_name="Emergency Exit" faims_attribute_type="measure" ref="Emergency_Exit">
+          <label>{Emergency_Exit}</label>
+        </input>
+        <select1 faims_attribute_name="Emergency Exit Shape" faims_attribute_type="vocab" ref="Emergency_Exit_Shape">
+          <label>{Emergency_Exit_Shape}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 faims_attribute_name="Emergency Exit Location" faims_attribute_type="vocab" ref="Emergency_Exit_Location">
+          <label>{Emergency_Exit_Location}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <input faims_attribute_name="Notes on Emergency Exit" faims_attribute_type="measure" ref="Notes_on_Emergency_Exit">
+          <label>{Notes_on_Emergency_Exit}</label>
+        </input>
+        <trigger ref="Take_GPS_Point_at_Emergency_Exit">
+          <label>{Take_GPS_Point_at_Emergency_Exit}</label>
+        </trigger>
+        <select1 ref="GPS_Points_at_Emergency_Exit">
+          <label>{GPS_Points_at_Emergency_Exit}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select faims_sync="true" type="camera" faims_attribute_name="Emergency Exit Photo" faims_attribute_type="measure" ref="Emergency_Exit_Photo">
+          <label>{Emergency_Exit_Photo}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Emergency_Exit_Photo_Button_1">
+          <label>{Emergency_Exit_Photo_Button_1}</label>
+        </trigger>
+        <input faims_attribute_name="Distance from Swan neck to Emergency Exit m" faims_attribute_type="measure" ref="Distance_from_Swan_neck_to_Emergency_Exit_m">
+          <label>{Distance_from_Swan_neck_to_Emergency_Exit_m}</label>
+        </input>
+      </group>
+      <group ref="Interior">
+        <label>{Interior}</label>
+        <input faims_attribute_name="Interior Description" faims_attribute_type="measure" ref="Interior_Description">
+          <label>{Interior_Description}</label>
+        </input>
+        <input faims_attribute_name="Comments and Recommendations" faims_attribute_type="measure" ref="Comments_and_Recommendations">
+          <label>{Comments_and_Recommendations}</label>
+        </input>
+      </group>
+    </group>
+    <group ref="Shape" faims_archent_type="Shape">
+      <label>{Shape}</label>
+      <group ref="Shape_Note">
+        <label>{Shape_Note}</label>
+        <input faims_attribute_name="Label" faims_attribute_type="measure" ref="Label">
+          <label>{Label}</label>
+        </input>
+        <input faims_attribute_name="Note" faims_attribute_type="measure" ref="Note">
+          <label>{Note}</label>
+        </input>
+      </group>
+    </group>
+    <group ref="GPS_Point_at_The_Top_of_Entryway" faims_archent_type="GPS Point at The Top of Entryway">
+      <label>{GPS_Point_at_The_Top_of_Entryway}</label>
+      <group ref="GPS_Point_at_The_Top_of_Entryway">
+        <label>{GPS_Point_at_The_Top_of_Entryway}</label>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Latitude" faims_attribute_type="measure" ref="Latitude" faims_read_only="true">
+              <label>{Latitude}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Longitude" faims_attribute_type="measure" ref="Longitude" faims_read_only="true">
+              <label>{Longitude}</label>
+            </input>
+          </group>
+        </group>
+        <group ref="Colgroup_2" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_read_only="true">
+              <label>{Northing}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_read_only="true">
+              <label>{Easting}</label>
+            </input>
+          </group>
+          <group ref="Col_3" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_read_only="true">
+              <label>{Accuracy}</label>
+            </input>
+          </group>
+        </group>
+        <trigger ref="Take_From_GPS_1">
+          <label>{Take_From_GPS_1}</label>
+        </trigger>
+      </group>
+      <group ref="Hidden" faims_hidden="true">
+        <label>{Hidden}</label>
+        <input faims_attribute_name="GPS Point at The Top of Entryway ID" faims_attribute_type="measure" ref="ID">
+          <label>{ID}</label>
+        </input>
+      </group>
+    </group>
+    <group ref="GPS_Point_at_The_Bottom_of_Entryway" faims_archent_type="GPS Point at The Bottom of Entryway">
+      <label>{GPS_Point_at_The_Bottom_of_Entryway}</label>
+      <group ref="GPS_Point_at_The_Bottom_of_Entryway">
+        <label>{GPS_Point_at_The_Bottom_of_Entryway}</label>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Latitude" faims_attribute_type="measure" ref="Latitude" faims_read_only="true">
+              <label>{Latitude}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Longitude" faims_attribute_type="measure" ref="Longitude" faims_read_only="true">
+              <label>{Longitude}</label>
+            </input>
+          </group>
+        </group>
+        <group ref="Colgroup_2" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_read_only="true">
+              <label>{Northing}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_read_only="true">
+              <label>{Easting}</label>
+            </input>
+          </group>
+          <group ref="Col_3" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_read_only="true">
+              <label>{Accuracy}</label>
+            </input>
+          </group>
+        </group>
+        <trigger ref="Take_From_GPS_1">
+          <label>{Take_From_GPS_1}</label>
+        </trigger>
+      </group>
+      <group ref="Hidden" faims_hidden="true">
+        <label>{Hidden}</label>
+        <input faims_attribute_name="GPS Point at The Bottom of Entryway ID" faims_attribute_type="measure" ref="ID">
+          <label>{ID}</label>
+        </input>
+      </group>
+    </group>
+    <group ref="GPS_Point_at_Emergency_Exit" faims_archent_type="GPS Point at Emergency Exit">
+      <label>{GPS_Point_at_Emergency_Exit}</label>
+      <group ref="GPS_Point_at_Emergency_Exit">
+        <label>{GPS_Point_at_Emergency_Exit}</label>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Latitude" faims_attribute_type="measure" ref="Latitude" faims_read_only="true">
+              <label>{Latitude}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Longitude" faims_attribute_type="measure" ref="Longitude" faims_read_only="true">
+              <label>{Longitude}</label>
+            </input>
+          </group>
+        </group>
+        <group ref="Colgroup_2" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_read_only="true">
+              <label>{Northing}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_read_only="true">
+              <label>{Easting}</label>
+            </input>
+          </group>
+          <group ref="Col_3" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_read_only="true">
+              <label>{Accuracy}</label>
+            </input>
+          </group>
+        </group>
+        <trigger ref="Take_From_GPS_1">
+          <label>{Take_From_GPS_1}</label>
+        </trigger>
+      </group>
+      <group ref="Hidden" faims_hidden="true">
+        <label>{Hidden}</label>
+        <input faims_attribute_name="GPS Point at Emergency Exit ID" faims_attribute_type="measure" ref="ID">
+          <label>{ID}</label>
         </input>
       </group>
     </group>

@@ -1,32 +1,537 @@
 <?xml version="1.0" ?>
+<!--@POSTPROC: ./postproc.sh-->
+<!--TODO: Logic-->
 <module>
-<!--
-  This is a template! Modify me then the FAIMS-Tools generate.sh script!
--->
 
 <User f="nodata">
   <User f="noscroll">
-    <Select_User t="list" f="user" l="Control"/>
+    <User t="list" f="user" l="Start"/>
   </User>
 </User>
 
-<Control f="nodata">
+<Start f="nodata">
   <Main>
-    <New_Record t="button" l="Record"/>
+    <Create_new_Feature t="button" l="Shelter"/>
+    <autonum/>
+    <GPS_Diagnostics t="gpsdiag"/>
   </Main>
-</Control>
+  <search>
+    Records
+  </search>
+  <Map f="noscroll">
+    <Map t="map"/>
+    <!-- TODO: Create shape (which - if a point - spawns a Shelter tabgroup and records the General GPS coordinate, and if a polygon, spawns a shape note , just like in burial) -->
+    <Create_Shape t="button" l="Shape"/>
+  </Map>
+</Start>
 
-<Record>
-  <fmt>{{Hello_World}}</fmt>
-  <Record>
-    <!--TODO: Implement me-->
-    <Hello_World/>
-  </Record>
-</Record>
+<Shelter>
+  <fmt>{{Feature_ID}}-{{Feature_Type}}</fmt>
+  <General>
+    <author/>
+    <timestamp/>
+    <Guide_1 t="webview" f="nolabel">
+<![CDATA[
+<h2>Civil Defence Features</h2><p>A number of different civil defence features can be found around Aarhus, from emergency hospital, watch posts to civilian shelters of different design. This form is designed primarily for shelters. If a feature is a shelter, then please select an appropriate type as best as you can surmise from the remains visible on the surface. If the feature is something else (depo, or other), select Other and describe in the Annotation, please. </p><div><img style="width:100%" src="https://www.danskkoldkrigsforening.dk/wp-content/uploads/2020/07/D%C3%A6kningsgrav-1.jpg"/></div>
+]]>
+    </Guide_1>
+    <Feature_ID f="autonum notnull"/>
+    <Feature_Source>
+      <desc>What led you to the shelter or feature?</desc>
+      <opts>
+        <opt>Informant</opt>
+        <opt>Serendipity</opt>
+        <opt>Rosannas list</opt>
+        <opt>Map</opt>
+        <opt>Other</opt>
+        <opt>NA</opt>
+      </opts>
+    </Feature_Source>
+    <Feature_Type f="notnull">
+      <desc>
+        Shelter is the most common type of civil defense struture in Aarhus.  Types refer to the plan of the shelter below ground. Indicate which is the likely type if you can make it out during the visit. Use the certainty slider in case of uncertainty!
+      </desc>
+      <opts>
+        <opt>Shelter Type NA</opt>
+        <opt p="gallery/Type1.jpg">Shelter Type I</opt>
+        <opt p="gallery/Type2.jpg">Shelter Type II</opt>
+        <opt p="gallery/Type3.jpg">Shelter Type III</opt>
+        <opt p="gallery/Type4.jpg">Shelter Type IV</opt>
+        <opt p="gallery/Type5.jpg">Shelter Type V</opt>
+        <opt p="gallery/Type6.jpg">Shelter Type VI</opt>
+        <opt>Bunker</opt>
+        <opt>Emergency hospital</opt>
+        <opt>Observation post</opt>
+        <opt>Other</opt>
+      </opts>
+    </Feature_Type>
+    <Guide_2 t="webview" f="nolabel">
+<![CDATA[
+<h2>Type/Subtype Illustration</h2><div><img style="width:100%" src="https://www.danskkoldkrigsforening.dk/wp-content/uploads/2020/07/D%C3%A6kningsgrav-2_final.jpg"/></div>
+]]>
+    </Guide_2>
+    <Belongs_to_Shelter_Subtype>
+      <desc>
+        This attribute is relevant only to shelters and is not mandatory. Shelter subtype letters refer to the number of times the shelter design you recorded above occurs in one location.
+      </desc>
+      <opts>
+        <opt>NA</opt>
+        <opt>2</opt>
+        <opt>3</opt>
+        <opt>4</opt>
+        <opt>5</opt>
+        <opt>One type iteration exactly</opt>
+        <opt>Other</opt>
+      </opts>
+    </Belongs_to_Shelter_Subtype>
+    <Feature_description>
+      <desc>
+        Comment on feature preservation and, if the feature is not a shelter, describe its characteristics, such as shape, external markers and dimensions here. Authors should explicitly comment on feature subtype listed in the previous box.
+      </desc>
+    </Feature_description>
 
+    <!-- TODO: GPS Ensure the height really is fixed-->
+    <Take_GPS_Point_at_The_Top_of_Entryway lc="GPS_Point_at_The_Top_of_Entryway"/>
+    <GPS_Points_at_The_Top_of_Entryway ec="GPS_Point_at_The_Top_of_Entryway" t="dropdown"/>
+
+    <Landuse_on_top f="notnull">
+      <desc>
+          Describe what covers the surface of the shelter. Is it overgrown with grass, covered with shrubs, or converted into a playground or ashpalted area?
+      </desc>
+      <opts>
+        <opt>Grass</opt>
+        <opt>Shrubs</opt>
+        <opt>Trees</opt>
+        <opt>Concrete slabs</opt>
+        <opt> Asphalt</opt>
+        <opt> Street</opt>
+        <opt> Playground</opt>
+        <opt>Structure</opt>
+        <opt>Other</opt>
+      </opts>
+    </Landuse_on_top>
+    <Landuse_around>
+      <desc>
+        Describe briefly the setting of the shelter. If multiple different kinds of landuse co-occur, choose the majority and then add the rest in annotation
+      </desc>
+      <opts>
+        <opt>Other</opt>
+        <opt>Urban structures</opt>
+        <opt>Street</opt>
+        <opt>Playground or schoolyard</opt>
+        <opt>Forest</opt>
+        <opt>Agricultural field</opt>
+        <opt>Grassland or park</opt>
+      </opts>
+    </Landuse_around>
+    <Overview_Photo f="notnull" t="camera">
+      <desc>
+          Take a photo of the entire extent of the feature with a scale within.
+      </desc>
+    </Overview_Photo>
+    <Locale_Description>
+      <desc>
+        Describe the environs of the shelter or feature, and specify its address so that others can find it easily after you.
+      </desc>
+    </Locale_Description>
+  </General>
+
+  <Access>
+    <Shelter_elements>
+      <desc>
+        Shelters have entryways, vents/emergency exists and other elements, which are visible unless the shelter has been buried or demolished. Please indicate the shape and location of these elements
+      </desc>
+    </Shelter_elements>
+    <Entryway>
+      <desc>
+        The entrance to a shelter is usually through stairs down a gate, often covered by concrete slabs, but sometimes also doorways or other.
+      </desc>
+    </Entryway>
+    <Entryway_type>
+      <desc>
+        Select from the list or define the type using Other + Annotation
+      </desc>
+      <opts>
+        <opt>Concrete slabs</opt>
+        <opt>Doorway</opt>
+        <opt>Access buried or indeterminate</opt>
+        <opt>Other</opt>
+        <opt>NA</opt>
+      </opts>
+    </Entryway_type>
+    <Accessiblity_of_Shelter_During_Visit>
+      <desc>
+        Choose a field from the dropdown
+      </desc>
+      <opts>
+        <opt>NA</opt>
+        <opt>Other</opt>
+        <opt>Barred (concrete slabs or earthen cover bar access fully or partially)</opt>
+        <opt>Sealed (as in a layer of concrete seals a doorway)</opt>
+        <opt>Locked</opt>
+        <opt>Open</opt>
+      </opts>
+    </Accessiblity_of_Shelter_During_Visit>
+    <Entryway_Direction f="notnull">
+      <desc>
+        Use a compass to measure which way the doorway is facing. Use this terminology: West-northwest (WNW) North-northwest (NNW) North-northeast (NNE) East-northeast (ENE) East-southeast (ESE) South-southeast (SSE) South-southwest (SSW) West-southwest (WSW)
+      </desc>
+      <opts>
+        <opt>NNW</opt>
+        <opt>NW</opt>
+        <opt>WNW</opt>
+        <opt>W</opt>
+        <opt>WSW</opt>
+        <opt>SW</opt>
+        <opt>SSW</opt>
+        <opt>S</opt>
+        <opt>SSE</opt>
+        <opt>SE</opt>
+        <opt>ESE</opt>
+        <opt>E</opt>
+        <opt>ENE</opt>
+        <opt>NE</opt>
+        <opt>NNE</opt>
+        <opt>N</opt>
+        <opt>NOT AVAILABLE</opt>
+        <opt>OTHER</opt>
+      </opts>
+    </Entryway_Direction>
+    <Comments_on_Entryway/>
+
+    <!-- TODO: GPS Ensure the height really is fixed-->
+    <Take_GPS_Point_at_The_Bottom_of_Entryway lc="GPS_Point_at_The_Bottom_of_Entryway"/>
+    <GPS_Points_at_The_Bottom_of_Entryway ec="GPS_Point_at_The_Bottom_of_Entryway" t="dropdown"/>
+
+    <Entryway_Photo t="camera"/>
+
+    <Emergency_Exit>
+      <desc>
+        Emergency exit is a chimney-like feature on top of most shelters. It can be either square or round in plan and may have little vents/windows in it.
+      </desc>
+    </Emergency_Exit>
+
+    <Emergency_Exit_Shape>
+      <desc>
+        Indicate the shape of emergency exit. If not detectable, select NA.
+      </desc>
+      <opts>
+        <opt>Round</opt>
+        <opt>Square</opt>
+        <opt>Other</opt>
+        <opt>NA</opt>
+      </opts>
+    </Emergency_Exit_Shape>
+
+    <Emergency_Exit_Location>
+      <desc>
+        The specific location of an emergency exit will vary with shelter type. A round shelter will have this exit on the top center, while a square shelter will have it off center, to the side or a corner. Please indicate its location relative to shelter plan and use Annotation or pictures for more detail
+      </desc>
+      <opts>
+        <opt>Central</opt>
+        <opt>Side</opt>
+        <opt>Corner</opt>
+        <opt>Other</opt>
+        <opt>NA</opt>
+      </opts>
+    </Emergency_Exit_Location>
+
+    <Notes_on_Emergency_Exit/>
+
+    <!-- TODO: GPS -->
+    <Take_GPS_Point_at_Emergency_Exit lc="GPS_Point_at_Emergency_Exit"/>
+    <GPS_Points_at_Emergency_Exit ec="GPS_Point_at_Emergency_Exit" t="dropdown"/>
+
+    <Emergency_Exit_Photo t="camera">
+      <desc>
+        Take an extra photo of the emergency exit if it is obscured in the Overview photo
+      </desc>
+    </Emergency_Exit_Photo>
+
+    <Distance_from_Swan_neck_to_Emergency_Exit_m b="decimal">
+      Distance from swan-neck to emergency exit (m)
+      <desc>
+        Can you find a turned tube "swan neck ventilation" near the foot of the shelter? If so, measure its distance to the emergency exit in METERS
+      </desc>
+    </Distance_from_Swan_neck_to_Emergency_Exit_m>
+
+  </Access>
+  <Interior>
+    <Interior_Description>
+      <desc>
+        If the shelter is accessible, look inside and provide a description of internal shape, contents, condition and status.
+      </desc>
+    </Interior_Description>
+
+    <Comments_and_Recommendations/>
+  </Interior>
+</Shelter>
+
+<Shape>
+  <Shape_Note>
+    <Label f="id"/>
+    <Note/>
+  </Shape_Note>
+</Shape>
+
+<GPS_Point_at_The_Top_of_Entryway>
+  <fmt>Top Entryway Point for Feature {{ID}}</fmt>
+  <GPS_Point_at_The_Top_of_Entryway>
+    <gps/>
+  </GPS_Point_at_The_Top_of_Entryway>
+  <Hidden f="hidden">
+    <ID i="Shelter/General/Feature_ID"/>
+  </Hidden>
+</GPS_Point_at_The_Top_of_Entryway>
+
+<GPS_Point_at_The_Bottom_of_Entryway>
+  <fmt>Bottom Entryway Point for Feature {{ID}}</fmt>
+  <GPS_Point_at_The_Bottom_of_Entryway>
+    <gps/>
+  </GPS_Point_at_The_Bottom_of_Entryway>
+  <Hidden f="hidden">
+    <ID i="Shelter/General/Feature_ID"/>
+  </Hidden>
+</GPS_Point_at_The_Bottom_of_Entryway>
+
+<GPS_Point_at_Emergency_Exit>
+  <fmt>Emergency Exit Point for Feature {{ID}}</fmt>
+  <GPS_Point_at_Emergency_Exit>
+    <gps/>
+  </GPS_Point_at_Emergency_Exit>
+  <Hidden f="hidden">
+    <ID i="Shelter/General/Feature_ID"/>
+  </Hidden>
+</GPS_Point_at_Emergency_Exit>
 
 <logic><![CDATA[
-/// TODO: Implement logic
+  /********************************* CUSTOM SEARCH ******************************/
+  addOnEvent("Start/Search", "show", "populateSelectAuthor()");
+  addOnEvent("Start/Search/Select_Author", "click", "search()");
+  void populateSelectAuthor(){
+  String refSearchUsers = "Start/Search/Select_Author";
+  String getNonDeletedUsersQuery = "SELECT userid, fname || ' ' || lname "+
+                                   "  FROM user "+
+                                   " WHERE userdeleted is null "+
+                                   " UNION " +
+                                   "SELECT -1, '{All}'";
+
+  fetchAll(getNonDeletedUsersQuery, new FetchCallback() {
+    onFetch(result) {
+      populateDropDown(refSearchUsers, result, false);
+      search();
+    }
+  });
+  }
+
+  // Overrides auto-generated definition
+  void search(){
+  String refEntityList    = "Start/Search/Entity_List";
+  String refSearchTerm    = "Start/Search/Search_Term";
+  String refEntityTypes   = "Start/Search/Entity_Types";
+  String refSelectAuthor  = "Start/Search/Select_Author";
+  String type = getFieldValue(refEntityTypes);
+  String term = getFieldValue(refSearchTerm);
+
+  String user = getFieldValue(refSelectAuthor);
+  String searchQuery = "SELECT uuid, response "+
+                       "  FROM latestNonDeletedArchEntFormattedIdentifiers  "+
+                       " WHERE uuid in (SELECT uuid "+
+                       "                  FROM latestNonDeletedArchEntIdentifiers "+
+                       "                 WHERE measure LIKE {term}||'%'  "+
+                       "                   AND ( aenttypename = {type} OR '' = {type} ) "+
+                       " AND ( userid = {user} OR -1 = {user}) " +
+                       "                )  "+
+                       " ORDER BY substr(uuid, 7, 13) DESC "+
+                       " LIMIT ? "+
+                       "OFFSET ? ";
+  searchQuery = dbReplaceFirst(searchQuery, "{term}", term);
+  searchQuery = dbReplaceFirst(searchQuery, "{type}", type);
+  searchQuery = dbReplaceFirst(searchQuery, "{type}", type);
+  searchQuery = replaceFirst(searchQuery, "{user}", user);
+  searchQuery = replaceFirst(searchQuery, "{user}", user);
+  populateCursorList(refEntityList, searchQuery, 25);
+  refreshTabgroupCSS("Start");
+
+  Log.d("Module", "Search query: " + searchQuery);
+  }
+
+  /************************************ MAP *************************************/
+  DATA_ENTRY_LAYER    = "Data Entry Layer";
+  DATA_ENTRY_LAYER_ID = 0;
+  void initMap() {
+    String refMap = "Start/Map/Map";
+    setMapZoom(refMap, 15.0f);
+    // Shape
+    isEntity = true;
+    queryName = "Shape";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = 'Shape'";
+    ps = createPointStyle(10, Color.YELLOW, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.YELLOW, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.YELLOW, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(refMap, "Shape Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+    // Data entry layer
+    DATA_ENTRY_LAYER_ID = createCanvasLayer(refMap, DATA_ENTRY_LAYER);
+    setSelectedLayer(refMap, DATA_ENTRY_LAYER);
+  }
+  void clearGeometry() {
+    String  mapRef   = "Start/Map/Map";
+    List    geometry = getGeometryList(mapRef, DATA_ENTRY_LAYER_ID);
+    if (geometry == null)     return;
+    if (geometry.size() == 0) return;
+    for (geom : geometry) {
+      print("Geometry cleared:" + geom.userData.geomId);
+      clearGeometry(mapRef, geom.userData.geomId);
+    }
+  }
+  boolean checkForGeometry() {
+    String mapRef = "Start/Map/Map";
+    List geometry = getGeometryList(mapRef, DATA_ENTRY_LAYER_ID);
+    if (geometry == null || geometry.size() == 0) {
+      String head = "Cannot Create Shape";
+      String body = "At least one shape must be present on the data entry layer.";
+      showWarning(head, body);
+      return false;
+    } else {
+      return true;
+    }
+  }
+  void centreMe() {
+    String mapRef = "Start/Map/Map";
+    if(!isExternalGPSOn() && !isInternalGPSOn()) {
+      showToast("{GPS_Not_Initialised}");
+    } else {
+      centerOnCurrentPosition(mapRef);
+    }
+  }
+  void refreshMap() {
+    String mapRef = "Start/Map/Map";
+    refreshMap(mapRef);
+  }
+
+  addOnEventCond("Start/Map/Create_Shape", "click", "checkForGeometry()");
+  addOnEvent(
+      "Start/Map/Create_Shape",
+      "click",
+      "setAutoSaveGeometry(getGeometryList(MAP_REF, DATA_ENTRY_LAYER_ID))",
+      PRECEDENCE_MID+1);
+  addOnEvent("Shape", "save", "clearGeometry()");
+
+  void onSaveShape__() {
+    String tabgroup = "shape";
+    executeOnEvent(tabgroup, "create");
+  }
+
+  initMap();
+  addOnEvent("Start/Map",           "show",  "refreshMap()");
+
+  /****************************** GIS POINT STYLES ******************************/
+  //final String MAP_REF = "Start/Map/Map";
+  /* Displays the geometry of each entity whose menu, by the name of `attribName`,
+   * has `vocabName` saved in it. The geometry is displayed in whatever colour is
+   * given by `geoColor`.
+   *
+   * The geometry is displayed in a layer called `layerName`. This is a
+   * human-readable name that the user can use to toggle the visibility of the
+   * geometry in the UI.
+   */
+  void showDatabaseLayerByVocabName(
+      String attribName,
+      String vocabName,
+      int    geoColor, /* Example argument: Color.BLACK */
+      String layerName
+  ) {
+    int transBlk = Color.parseColor("#AA000000");
+    GeometryStyle sln_ = createLineStyle(10, transBlk, 0.01f, 0.3f, null);
+    // Define arguments to `showDatabaseLayer`
+    String q;
+    q  = "SELECT uuid, aenttimestamp";
+    q += "  FROM latestNonDeletedArchEnt";
+    q += "  JOIN latestnondeletedaentvalue USING (uuid)";
+    q += "  JOIN attributekey              USING (attributeid)";
+    q += "  JOIN vocabulary                USING (vocabid)";
+    q += " WHERE {vocabName}  IN ('', vocabname)";
+    q += "   AND {attribName} IN ('', attributename)";
+    q  = dbReplaceFirst(q, "{vocabName}",  vocabName);
+    q  = dbReplaceFirst(q, "{attribName}", attribName);
+    boolean isEntity = true;
+    GeometryStyle spt = createPointStyle(10, geoColor, 0.2f, 0.5f);
+    GeometryStyle sln = createLineStyle(10, geoColor, 0.05f, 0.3f, null);
+    GeometryStyle spg = createPolygonStyle(10, geoColor, sln_);
+    GeometryTextStyle stx = createTextStyle(
+        10,
+        Color.BLACK,
+        40,
+        Typeface.SANS_SERIF
+    );
+    showDatabaseLayer(
+        MAP_REF,
+        layerName,
+        isEntity,
+        layerName,
+        q,
+        spt,
+        sln,
+        spg,
+        stx
+    );
+  }
+  void showDatabaseLayerByVocabName(
+      String vocabName,
+      int    geoColor,
+      String layerName
+  ) {
+    showDatabaseLayerByVocabName("", vocabName, geoColor, layerName);
+  }
+  void showDatabaseLayerByVocabName(String vocabName, int geoColor) {
+    String layerName = guessArch16nValFromKey(vocabName);
+    showDatabaseLayerByVocabName(vocabName, geoColor, layerName);
+  }
+  void initMap() {
+    //showBaseMap(MAP_REF, "Base Map", "files/data/Map/K-35-066-3_Razdel.tif");
+    /*
+    showDatabaseLayerByVocabName("{1___pristine}",   Color.GREEN);
+    showDatabaseLayerByVocabName("{2___minor_damage}", Color.BLUE);
+    showDatabaseLayerByVocabName("{3___damaged}",  Color.YELLOW);
+    showDatabaseLayerByVocabName("{4___seriously_damaged}", Color.parseColor("#FFA500"));//FFA500 is orange in hex
+    showDatabaseLayerByVocabName("{5___extinct_or_near_extinct}", Color.RED);
+    showDatabaseLayerByVocabName("{NA}",  Color.BLACK);
+    */
+    String refMap = "Start/Map/Map";
+    isEntity = true;
+    queryName = "Burial Mound";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = 'Burial Mound'";
+    ps = createPointStyle(10, Color.BLUE, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.BLUE, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.BLUE, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(refMap, "Burial Mound Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+    setMapZoom(MAP_REF, 13.0f);
+  }
+  initMap();
+/********************************** VECTOR LAYER ****************************/
+  //Helper function to showSpatialLayer
+  void showSpatialLayerHelper(String dbLocation, String mapRef,String table, String idCol, String labCol, String name, int c){
+    ps = createPointStyle(10, c, 0.2f, 0.5f);
+    ls = createLineStyle(10, c, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, c, 40, Typeface.SANS_SERIF);
+    showSpatialLayer(mapRef, name, dbLocation, table, idCol, labCol, ps, ls, pos, ts);
+  }
+
+  //Preload all Spatial Layer
+  void loadSpatialLayers(){
+    String vectorDBLoc = "files/data/Map/spatialite.Vectors4FAIMS.32635.db";
+    String mapRef = "Start/Map/Map";
+    showSpatialLayerHelper(vectorDBLoc, mapRef, "YamLegGC","PK_UID", "ObjectID", "GC", Color.GREEN);
+    showSpatialLayerHelper(vectorDBLoc, mapRef, "yamlegneedgc","PK_UID", "TopoID", "Need GC",Color.RED );
+    showSpatialLayerHelper(vectorDBLoc, mapRef, "roads","PK_UID", "ObjectID", "Roads", Color.BLACK);//Black
+    showSpatialLayerHelper(vectorDBLoc, mapRef, "towns","PK_UID", "name_en", "Towns", Color.GRAY); //Grey
+    showSpatialLayerHelper(vectorDBLoc, mapRef, "yambolregion","PK_UID", "name_en", "Yambol Region", Color.MAGENTA);
+  }
+
+  addOnEvent("module", "load", "loadSpatialLayers()");
 ]]></logic>
 
 </module>

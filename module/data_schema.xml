@@ -1,10 +1,474 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dataSchema>
-  <ArchaeologicalElement name="Record">
+  <RelationshipElement name="Shelter - GPS Point at The Top of Entryway" type="hierarchical">
+    <description>A 1-to-n relationship between the parent and its children, respectively.</description>
+    <parent>Parent Of</parent>
+    <child>Child Of</child>
+  </RelationshipElement>
+  <RelationshipElement name="Shelter - GPS Point at The Bottom of Entryway" type="hierarchical">
+    <description>A 1-to-n relationship between the parent and its children, respectively.</description>
+    <parent>Parent Of</parent>
+    <child>Child Of</child>
+  </RelationshipElement>
+  <RelationshipElement name="Shelter - GPS Point at Emergency Exit" type="hierarchical">
+    <description>A 1-to-n relationship between the parent and its children, respectively.</description>
+    <parent>Parent Of</parent>
+    <child>Child Of</child>
+  </RelationshipElement>
+  <ArchaeologicalElement name="Shelter">
     <description></description>
-    <property name="Hello World" type="measure" isIdentifier="true">
+    <property name="Feature ID" type="measure" isIdentifier="true">
       <description></description>
       <formatString>$2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Feature Type" type="vocab" isIdentifier="true">
+      <description>
+        Shelter is the most common type of civil defense struture in Aarhus.  Types refer to the plan of the shelter below ground. Indicate which is the likely type if you can make it out during the visit. Use the certainty slider in case of uncertainty!
+      </description>
+      <formatString>-$1</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Shelter_Type_NA}
+<description> </description></term>
+        <term pictureURL="files/data/gallery/Type1.jpg">{Shelter_Type_I}
+<description> </description></term>
+        <term pictureURL="files/data/gallery/Type2.jpg">{Shelter_Type_II}
+<description> </description></term>
+        <term pictureURL="files/data/gallery/Type3.jpg">{Shelter_Type_III}
+<description> </description></term>
+        <term pictureURL="files/data/gallery/Type4.jpg">{Shelter_Type_IV}
+<description> </description></term>
+        <term pictureURL="files/data/gallery/Type5.jpg">{Shelter_Type_V}
+<description> </description></term>
+        <term pictureURL="files/data/gallery/Type6.jpg">{Shelter_Type_VI}
+<description> </description></term>
+        <term>{Bunker}
+<description> </description></term>
+        <term>{Emergency_hospital}
+<description> </description></term>
+        <term>{Observation_post}
+<description> </description></term>
+        <term>{Other}
+<description> </description></term>
+      </lookup>
+    </property>
+    <property name="Shelter author" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Shelter timestamp" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Feature Source" type="vocab">
+      <description>What led you to the shelter or feature?</description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Informant}
+<description> </description></term>
+        <term>{Serendipity}
+<description> </description></term>
+        <term>{Rosannas_list}
+<description> </description></term>
+        <term>{Map}
+<description> </description></term>
+        <term>{Other}
+<description> </description></term>
+        <term>{NA}
+<description> </description></term>
+      </lookup>
+    </property>
+    <property name="Belongs to Shelter Subtype" type="vocab">
+      <description>
+        This attribute is relevant only to shelters and is not mandatory. Shelter subtype letters refer to the number of times the shelter design you recorded above occurs in one location.
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{NA}
+<description> </description></term>
+        <term>{2}
+<description> </description></term>
+        <term>{3}
+<description> </description></term>
+        <term>{4}
+<description> </description></term>
+        <term>{5}
+<description> </description></term>
+        <term>{One_type_iteration_exactly}
+<description> </description></term>
+        <term>{Other}
+<description> </description></term>
+      </lookup>
+    </property>
+    <property name="Feature description" type="measure">
+      <description>
+        Comment on feature preservation and, if the feature is not a shelter, describe its characteristics, such as shape, external markers and dimensions here. Authors should explicitly comment on feature subtype listed in the previous box.
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Landuse on top" type="vocab">
+      <description>
+          Describe what covers the surface of the shelter. Is it overgrown with grass, covered with shrubs, or converted into a playground or ashpalted area?
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Grass}
+<description> </description></term>
+        <term>{Shrubs}
+<description> </description></term>
+        <term>{Trees}
+<description> </description></term>
+        <term>{Concrete_slabs}
+<description> </description></term>
+        <term>{Asphalt}
+<description> </description></term>
+        <term>{Street}
+<description> </description></term>
+        <term>{Playground}
+<description> </description></term>
+        <term>{Structure}
+<description> </description></term>
+        <term>{Other}
+<description> </description></term>
+      </lookup>
+    </property>
+    <property name="Landuse around" type="vocab">
+      <description>
+        Describe briefly the setting of the shelter. If multiple different kinds of landuse co-occur, choose the majority and then add the rest in annotation
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Other}
+<description> </description></term>
+        <term>{Urban_structures}
+<description> </description></term>
+        <term>{Street}
+<description> </description></term>
+        <term>{Playground_or_schoolyard}
+<description> </description></term>
+        <term>{Forest}
+<description> </description></term>
+        <term>{Agricultural_field}
+<description> </description></term>
+        <term>{Grassland_or_park}
+<description> </description></term>
+      </lookup>
+    </property>
+    <property name="Overview Photo" type="file" file="true" thumbnail="true">
+      <description>
+          Take a photo of the entire extent of the feature with a scale within.
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Locale Description" type="measure">
+      <description>
+        Describe the environs of the shelter or feature, and specify its address so that others can find it easily after you.
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Shelter elements" type="measure">
+      <description>
+        Shelters have entryways, vents/emergency exists and other elements, which are visible unless the shelter has been buried or demolished. Please indicate the shape and location of these elements
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Entryway" type="measure">
+      <description>
+        The entrance to a shelter is usually through stairs down a gate, often covered by concrete slabs, but sometimes also doorways or other.
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Entryway type" type="vocab">
+      <description>
+        Select from the list or define the type using Other + Annotation
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Concrete_slabs}
+<description> </description></term>
+        <term>{Doorway}
+<description> </description></term>
+        <term>{Access_buried_or_indeterminate}
+<description> </description></term>
+        <term>{Other}
+<description> </description></term>
+        <term>{NA}
+<description> </description></term>
+      </lookup>
+    </property>
+    <property name="Accessiblity of Shelter During Visit" type="vocab">
+      <description>
+        Choose a field from the dropdown
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{NA}
+<description> </description></term>
+        <term>{Other}
+<description> </description></term>
+        <term>{Barred__concrete_slabs_or_earthen_cover_bar_access_fully_or_partially_}
+<description> </description></term>
+        <term>{Sealed__as_in_a_layer_of_concrete_seals_a_doorway_}
+<description> </description></term>
+        <term>{Locked}
+<description> </description></term>
+        <term>{Open}
+<description> </description></term>
+      </lookup>
+    </property>
+    <property name="Entryway Direction" type="vocab">
+      <description>
+        Use a compass to measure which way the doorway is facing. Use this terminology: West-northwest (WNW) North-northwest (NNW) North-northeast (NNE) East-northeast (ENE) East-southeast (ESE) South-southeast (SSE) South-southwest (SSW) West-southwest (WSW)
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{NNW}
+<description> </description></term>
+        <term>{NW}
+<description> </description></term>
+        <term>{WNW}
+<description> </description></term>
+        <term>{W}
+<description> </description></term>
+        <term>{WSW}
+<description> </description></term>
+        <term>{SW}
+<description> </description></term>
+        <term>{SSW}
+<description> </description></term>
+        <term>{S}
+<description> </description></term>
+        <term>{SSE}
+<description> </description></term>
+        <term>{SE}
+<description> </description></term>
+        <term>{ESE}
+<description> </description></term>
+        <term>{E}
+<description> </description></term>
+        <term>{ENE}
+<description> </description></term>
+        <term>{NE}
+<description> </description></term>
+        <term>{NNE}
+<description> </description></term>
+        <term>{N}
+<description> </description></term>
+        <term>{NOT_AVAILABLE}
+<description> </description></term>
+        <term>{OTHER}
+<description> </description></term>
+      </lookup>
+    </property>
+    <property name="Comments on Entryway" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Entryway Photo" type="file" file="true" thumbnail="true">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Emergency Exit" type="measure">
+      <description>
+        Emergency exit is a chimney-like feature on top of most shelters. It can be either square or round in plan and may have little vents/windows in it.
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Emergency Exit Shape" type="vocab">
+      <description>
+        Indicate the shape of emergency exit. If not detectable, select NA.
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Round}
+<description> </description></term>
+        <term>{Square}
+<description> </description></term>
+        <term>{Other}
+<description> </description></term>
+        <term>{NA}
+<description> </description></term>
+      </lookup>
+    </property>
+    <property name="Emergency Exit Location" type="vocab">
+      <description>
+        The specific location of an emergency exit will vary with shelter type. A round shelter will have this exit on the top center, while a square shelter will have it off center, to the side or a corner. Please indicate its location relative to shelter plan and use Annotation or pictures for more detail
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Central}
+<description> </description></term>
+        <term>{Side}
+<description> </description></term>
+        <term>{Corner}
+<description> </description></term>
+        <term>{Other}
+<description> </description></term>
+        <term>{NA}
+<description> </description></term>
+      </lookup>
+    </property>
+    <property name="Notes on Emergency Exit" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Emergency Exit Photo" type="file" file="true" thumbnail="true">
+      <description>
+        Take an extra photo of the emergency exit if it is obscured in the Overview photo
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Distance from Swan neck to Emergency Exit m" type="measure">
+      <description>
+        Can you find a turned tube "swan neck ventilation" near the foot of the shelter? If so, measure its distance to the emergency exit in METERS
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Interior Description" type="measure">
+      <description>
+        If the shelter is accessible, look inside and provide a description of internal shape, contents, condition and status.
+      </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Comments and Recommendations" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+  </ArchaeologicalElement>
+  <ArchaeologicalElement name="Shape">
+    <description></description>
+    <property name="Label" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Note" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+  </ArchaeologicalElement>
+  <ArchaeologicalElement name="GPS Point at The Top of Entryway">
+    <description></description>
+    <property name="GPS Point at The Top of Entryway ID" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString>Top Entryway Point for Feature $2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Latitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Longitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Northing" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Easting" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Accuracy" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+  </ArchaeologicalElement>
+  <ArchaeologicalElement name="GPS Point at The Bottom of Entryway">
+    <description></description>
+    <property name="GPS Point at The Bottom of Entryway ID" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString>Bottom Entryway Point for Feature $2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Latitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Longitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Northing" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Easting" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Accuracy" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+  </ArchaeologicalElement>
+  <ArchaeologicalElement name="GPS Point at Emergency Exit">
+    <description></description>
+    <property name="GPS Point at Emergency Exit ID" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString>Emergency Exit Point for Feature $2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Latitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Longitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Northing" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Easting" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Accuracy" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
   </ArchaeologicalElement>
