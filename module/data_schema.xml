@@ -1,20 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dataSchema>
-  <RelationshipElement name="Shelter - GPS Point at The Top of Entryway" type="hierarchical">
-    <description>A 1-to-n relationship between the parent and its children, respectively.</description>
-    <parent>Parent Of</parent>
-    <child>Child Of</child>
-  </RelationshipElement>
-  <RelationshipElement name="Shelter - GPS Point at The Bottom of Entryway" type="hierarchical">
-    <description>A 1-to-n relationship between the parent and its children, respectively.</description>
-    <parent>Parent Of</parent>
-    <child>Child Of</child>
-  </RelationshipElement>
-  <RelationshipElement name="Shelter - GPS Point at Emergency Exit" type="hierarchical">
-    <description>A 1-to-n relationship between the parent and its children, respectively.</description>
-    <parent>Parent Of</parent>
-    <child>Child Of</child>
-  </RelationshipElement>
   <ArchaeologicalElement name="Shelter">
     <description></description>
     <property name="Feature ID" type="measure" isIdentifier="true">
@@ -105,14 +90,39 @@
 <description> </description></term>
       </lookup>
     </property>
-    <property name="Feature description" type="measure">
+    <property name="Feature Description" type="measure">
       <description>
         Comment on feature preservation and, if the feature is not a shelter, describe its characteristics, such as shape, external markers and dimensions here. Authors should explicitly comment on feature subtype listed in the previous box.
       </description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
-    <property name="Landuse on top" type="vocab">
+    <property name="Latitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Longitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Northing" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Easting" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Accuracy" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Landuse on Top" type="vocab">
       <description>
           Describe what covers the surface of the shelter. Is it overgrown with grass, covered with shrubs, or converted into a playground or ashpalted area?
       </description>
@@ -139,7 +149,7 @@
 <description> </description></term>
       </lookup>
     </property>
-    <property name="Landuse around" type="vocab">
+    <property name="Landuse Around" type="vocab">
       <description>
         Describe briefly the setting of the shelter. If multiple different kinds of landuse co-occur, choose the majority and then add the rest in annotation
       </description>
@@ -176,21 +186,7 @@
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
-    <property name="Shelter elements" type="measure">
-      <description>
-        Shelters have entryways, vents/emergency exists and other elements, which are visible unless the shelter has been buried or demolished. Please indicate the shape and location of these elements
-      </description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Entryway" type="measure">
-      <description>
-        The entrance to a shelter is usually through stairs down a gate, often covered by concrete slabs, but sometimes also doorways or other.
-      </description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Entryway type" type="vocab">
+    <property name="Entryway Type" type="vocab">
       <description>
         Select from the list or define the type using Other + Annotation
       </description>
@@ -230,7 +226,7 @@
 <description> </description></term>
       </lookup>
     </property>
-    <property name="Entryway Direction" type="vocab">
+    <property name="Entryway Faces Direction" type="vocab">
       <description>
         Use a compass to measure which way the doorway is facing. Use this terminology: West-northwest (WNW) North-northwest (NNW) North-northeast (NNE) East-northeast (ENE) East-southeast (ESE) South-southeast (SSE) South-southwest (SSW) West-southwest (WSW)
       </description>
@@ -282,13 +278,6 @@
     </property>
     <property name="Entryway Photo" type="file" file="true" thumbnail="true">
       <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Emergency Exit" type="measure">
-      <description>
-        Emergency exit is a chimney-like feature on top of most shelters. It can be either square or round in plan and may have little vents/windows in it.
-      </description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
@@ -368,105 +357,6 @@
       <appendCharacterString> - </appendCharacterString>
     </property>
     <property name="Note" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-  </ArchaeologicalElement>
-  <ArchaeologicalElement name="GPS Point at The Top of Entryway">
-    <description></description>
-    <property name="GPS Point at The Top of Entryway ID" type="measure" isIdentifier="true">
-      <description></description>
-      <formatString>Top Entryway Point for Feature $2</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Latitude" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Longitude" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Northing" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Easting" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Accuracy" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-  </ArchaeologicalElement>
-  <ArchaeologicalElement name="GPS Point at The Bottom of Entryway">
-    <description></description>
-    <property name="GPS Point at The Bottom of Entryway ID" type="measure" isIdentifier="true">
-      <description></description>
-      <formatString>Bottom Entryway Point for Feature $2</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Latitude" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Longitude" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Northing" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Easting" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Accuracy" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-  </ArchaeologicalElement>
-  <ArchaeologicalElement name="GPS Point at Emergency Exit">
-    <description></description>
-    <property name="GPS Point at Emergency Exit ID" type="measure" isIdentifier="true">
-      <description></description>
-      <formatString>Emergency Exit Point for Feature $2</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Latitude" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Longitude" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Northing" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Easting" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Accuracy" type="measure">
       <description></description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
