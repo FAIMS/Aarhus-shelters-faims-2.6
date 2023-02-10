@@ -331,13 +331,12 @@ REF_TO_TYPE.put("Start/Map/Save_Map_Settings_1", "button");
 REF_TO_TYPE.put("Start/Map/Create_Shape", "button");
 REF_TO_TYPE.put("Shelter/General/Shelter_author", "input");
 REF_TO_TYPE.put("Shelter/General/Shelter_timestamp", "input");
-REF_TO_TYPE.put("Shelter/General/Guide_1", "webview");
 REF_TO_TYPE.put("Shelter/General/Feature_ID", "input");
 REF_TO_TYPE.put("Shelter/General/Feature_Source", "dropdown");
 REF_TO_TYPE.put("Shelter/General/Feature_Type", "picture");
-REF_TO_TYPE.put("Shelter/General/Guide_2", "webview");
-REF_TO_TYPE.put("Shelter/General/Belongs_to_Shelter_Subtype", "dropdown");
+REF_TO_TYPE.put("Shelter/General/Number_of_Iterations_Subtype", "dropdown");
 REF_TO_TYPE.put("Shelter/General/Feature_Description", "input");
+REF_TO_TYPE.put("Shelter/General/Guide", "webview");
 REF_TO_TYPE.put("Shelter/General/Latitude", "input");
 REF_TO_TYPE.put("Shelter/General/Longitude", "input");
 REF_TO_TYPE.put("Shelter/General/Northing", "input");
@@ -352,7 +351,7 @@ REF_TO_TYPE.put("Shelter/General/Locale_Description", "input");
 REF_TO_TYPE.put("Shelter/Access/Entryway_Type", "dropdown");
 REF_TO_TYPE.put("Shelter/Access/Accessiblity_of_Shelter_During_Visit", "dropdown");
 REF_TO_TYPE.put("Shelter/Access/Entryway_Faces_Direction", "dropdown");
-REF_TO_TYPE.put("Shelter/Access/Comments_on_Entryway", "input");
+REF_TO_TYPE.put("Shelter/Access/Comments_on_Entryway_and_Access", "input");
 REF_TO_TYPE.put("Shelter/Access/Entryway_Photo", "camera");
 REF_TO_TYPE.put("Shelter/Access/Entryway_Photo_Button_1", "button");
 REF_TO_TYPE.put("Shelter/Access/Emergency_Exit_Shape", "dropdown");
@@ -362,6 +361,8 @@ REF_TO_TYPE.put("Shelter/Access/Emergency_Exit_Photo", "camera");
 REF_TO_TYPE.put("Shelter/Access/Emergency_Exit_Photo_Button_1", "button");
 REF_TO_TYPE.put("Shelter/Access/Distance_from_Swan_neck_to_Emergency_Exit_m", "input");
 REF_TO_TYPE.put("Shelter/Interior/Interior_Description", "input");
+REF_TO_TYPE.put("Shelter/Interior/Interior_Photo", "camera");
+REF_TO_TYPE.put("Shelter/Interior/Interior_Photo_Button_1", "button");
 REF_TO_TYPE.put("Shelter/Interior/Comments_and_Recommendations", "input");
 REF_TO_TYPE.put("Shape/Shape_Note/Label", "input");
 REF_TO_TYPE.put("Shape/Shape_Note/Note", "input");
@@ -379,7 +380,7 @@ DATA_REFS.add("Shelter/General/Shelter_timestamp");
 DATA_REFS.add("Shelter/General/Feature_ID");
 DATA_REFS.add("Shelter/General/Feature_Source");
 DATA_REFS.add("Shelter/General/Feature_Type");
-DATA_REFS.add("Shelter/General/Belongs_to_Shelter_Subtype");
+DATA_REFS.add("Shelter/General/Number_of_Iterations_Subtype");
 DATA_REFS.add("Shelter/General/Feature_Description");
 DATA_REFS.add("Shelter/General/Latitude");
 DATA_REFS.add("Shelter/General/Longitude");
@@ -393,7 +394,7 @@ DATA_REFS.add("Shelter/General/Locale_Description");
 DATA_REFS.add("Shelter/Access/Entryway_Type");
 DATA_REFS.add("Shelter/Access/Accessiblity_of_Shelter_During_Visit");
 DATA_REFS.add("Shelter/Access/Entryway_Faces_Direction");
-DATA_REFS.add("Shelter/Access/Comments_on_Entryway");
+DATA_REFS.add("Shelter/Access/Comments_on_Entryway_and_Access");
 DATA_REFS.add("Shelter/Access/Entryway_Photo");
 DATA_REFS.add("Shelter/Access/Emergency_Exit_Shape");
 DATA_REFS.add("Shelter/Access/Emergency_Exit_Location");
@@ -401,6 +402,7 @@ DATA_REFS.add("Shelter/Access/Notes_on_Emergency_Exit");
 DATA_REFS.add("Shelter/Access/Emergency_Exit_Photo");
 DATA_REFS.add("Shelter/Access/Distance_from_Swan_neck_to_Emergency_Exit_m");
 DATA_REFS.add("Shelter/Interior/Interior_Description");
+DATA_REFS.add("Shelter/Interior/Interior_Photo");
 DATA_REFS.add("Shelter/Interior/Comments_and_Recommendations");
 DATA_REFS.add("Shape/Shape_Note/Label");
 DATA_REFS.add("Shape/Shape_Note/Note");
@@ -443,13 +445,12 @@ REF_TO_FLAG_STRING.put("Start/Map/Save_Map_Settings_1", "");
 REF_TO_FLAG_STRING.put("Start/Map/Create_Shape", "");
 REF_TO_FLAG_STRING.put("Shelter/General/Shelter_author", "readonly");
 REF_TO_FLAG_STRING.put("Shelter/General/Shelter_timestamp", "readonly");
-REF_TO_FLAG_STRING.put("Shelter/General/Guide_1", "nolabel");
 REF_TO_FLAG_STRING.put("Shelter/General/Feature_ID", "autonum notnull id");
 REF_TO_FLAG_STRING.put("Shelter/General/Feature_Source", "");
 REF_TO_FLAG_STRING.put("Shelter/General/Feature_Type", "notnull id");
-REF_TO_FLAG_STRING.put("Shelter/General/Guide_2", "nolabel");
-REF_TO_FLAG_STRING.put("Shelter/General/Belongs_to_Shelter_Subtype", "");
+REF_TO_FLAG_STRING.put("Shelter/General/Number_of_Iterations_Subtype", "htmldesc");
 REF_TO_FLAG_STRING.put("Shelter/General/Feature_Description", "");
+REF_TO_FLAG_STRING.put("Shelter/General/Guide", "nolabel");
 REF_TO_FLAG_STRING.put("Shelter/General/Latitude", "readonly notnull");
 REF_TO_FLAG_STRING.put("Shelter/General/Longitude", "readonly notnull");
 REF_TO_FLAG_STRING.put("Shelter/General/Northing", "readonly notnull");
@@ -464,7 +465,7 @@ REF_TO_FLAG_STRING.put("Shelter/General/Locale_Description", "");
 REF_TO_FLAG_STRING.put("Shelter/Access/Entryway_Type", "notnull");
 REF_TO_FLAG_STRING.put("Shelter/Access/Accessiblity_of_Shelter_During_Visit", "notnull");
 REF_TO_FLAG_STRING.put("Shelter/Access/Entryway_Faces_Direction", "notnull");
-REF_TO_FLAG_STRING.put("Shelter/Access/Comments_on_Entryway", "");
+REF_TO_FLAG_STRING.put("Shelter/Access/Comments_on_Entryway_and_Access", "");
 REF_TO_FLAG_STRING.put("Shelter/Access/Entryway_Photo", "");
 REF_TO_FLAG_STRING.put("Shelter/Access/Entryway_Photo_Button_1", "");
 REF_TO_FLAG_STRING.put("Shelter/Access/Emergency_Exit_Shape", "notnull");
@@ -474,6 +475,8 @@ REF_TO_FLAG_STRING.put("Shelter/Access/Emergency_Exit_Photo", "");
 REF_TO_FLAG_STRING.put("Shelter/Access/Emergency_Exit_Photo_Button_1", "");
 REF_TO_FLAG_STRING.put("Shelter/Access/Distance_from_Swan_neck_to_Emergency_Exit_m", "");
 REF_TO_FLAG_STRING.put("Shelter/Interior/Interior_Description", "");
+REF_TO_FLAG_STRING.put("Shelter/Interior/Interior_Photo", "");
+REF_TO_FLAG_STRING.put("Shelter/Interior/Interior_Photo_Button_1", "");
 REF_TO_FLAG_STRING.put("Shelter/Interior/Comments_and_Recommendations", "");
 REF_TO_FLAG_STRING.put("Shape/Shape_Note/Label", "id");
 REF_TO_FLAG_STRING.put("Shape/Shape_Note/Note", "");
@@ -3463,6 +3466,7 @@ addOnEvent("Start/Map/Create_Shape", "click", "onClickStartCreateShape()");
 addOnEvent("Shelter/General/Overview_Photo_Button_1", "click", "attachPictureTo(\"Shelter/General/Overview_Photo\")");
 addOnEvent("Shelter/Access/Entryway_Photo_Button_1", "click", "attachPictureTo(\"Shelter/Access/Entryway_Photo\")");
 addOnEvent("Shelter/Access/Emergency_Exit_Photo_Button_1", "click", "attachPictureTo(\"Shelter/Access/Emergency_Exit_Photo\")");
+addOnEvent("Shelter/Interior/Interior_Photo_Button_1", "click", "attachPictureTo(\"Shelter/Interior/Interior_Photo\")");
 
 /******************************************************************************/
 /*                 BINDINGS FOR 'VIEW ATTACHED FILES' BUTTONS                 */
@@ -3887,6 +3891,7 @@ void duplicateShelter(){
   populateCameraPictureGallery("Shelter/General/Overview_Photo", new ArrayList());
   populateCameraPictureGallery("Shelter/Access/Entryway_Photo", new ArrayList());
   populateCameraPictureGallery("Shelter/Access/Emergency_Exit_Photo", new ArrayList());
+  populateCameraPictureGallery("Shelter/Interior/Interior_Photo", new ArrayList());
   executeOnEvent(tabgroup, "copy");
 
   saveCallback = new SaveCallback() {
@@ -3921,6 +3926,7 @@ void duplicateShelter(){
       excludeAttributes.add("Overview Photo");
       excludeAttributes.add("Entryway Photo");
       excludeAttributes.add("Emergency Exit Photo");
+      excludeAttributes.add("Interior Photo");
 
       duplicateTabGroup(tabgroup, null, getExtraAttributes(result), excludeAttributes, saveCallback);
     }
@@ -4515,19 +4521,17 @@ for (m : ENTITY_MENUS) {
   }
 
   void clearGeometry() {
-    String  mapRef   = "Start/Map/Map";
-    List    geometry = getGeometryList(mapRef, DATA_ENTRY_LAYER_ID);
+    List geometry = getGeometryList(MAP_REF, DATA_ENTRY_LAYER_ID);
     if (geometry == null)     return;
     if (geometry.size() == 0) return;
     for (geom : geometry) {
       print("Geometry cleared:" + geom.userData.geomId);
-      clearGeometry(mapRef, geom.userData.geomId);
+      clearGeometry(MAP_REF, geom.userData.geomId);
     }
   }
 
   boolean checkForGeometry() {
-    String mapRef = "Start/Map/Map";
-    List geometry = getGeometryList(mapRef, DATA_ENTRY_LAYER_ID);
+    List geometry = getGeometryList(MAP_REF, DATA_ENTRY_LAYER_ID);
     if (geometry == null || geometry.size() == 0) {
       String head = "Cannot Create Shape";
       String body = "At least one shape must be present on the data entry layer.";
@@ -4539,11 +4543,10 @@ for (m : ENTITY_MENUS) {
   }
 
   void centreMe() {
-    String mapRef = "Start/Map/Map";
     if(!isExternalGPSOn() && !isInternalGPSOn()) {
       showToast("{GPS_Not_Initialised}");
     } else {
-      centerOnCurrentPosition(mapRef);
+      centerOnCurrentPosition(MAP_REF);
     }
   }
 
@@ -4561,6 +4564,11 @@ for (m : ENTITY_MENUS) {
 
   addOnEvent("module", "load", "initMap()");
   addOnEvent("Start/Map", "show",  "refreshMap()");
+
+/************************************ WEB *************************************/
+String REF_WEBVIEW = "Shelter/General/Guide";
+
+populateWebViewHtml(REF_WEBVIEW, "<h2>Take GPS point at entryway</h2>");
 
 
 /******************************************************************************/

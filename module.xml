@@ -28,11 +28,6 @@
   <General>
     <author/>
     <timestamp/>
-    <Guide_1 t="webview" f="nolabel">
-<![CDATA[
-<h2>Civil Defence Features</h2><p>A number of different civil defence features can be found around Aarhus, from emergency hospital, watch posts to civilian shelters of different design. This form is designed primarily for shelters. If a feature is a shelter, then please select an appropriate type as best as you can surmise from the remains visible on the surface. If the feature is something else (depo, or other), select Other and describe in the Annotation, please. </p><div><img style="width:100%" src="https://www.danskkoldkrigsforening.dk/wp-content/uploads/2020/07/D%C3%A6kningsgrav-1.jpg"/></div>
-]]>
-    </Guide_1>
     <Feature_ID f="autonum notnull"/>
     <Feature_Source>
       <desc>What led you to the shelter or feature?</desc>
@@ -50,44 +45,55 @@
         Shelter is the most common type of civil defense struture in Aarhus.  Types refer to the plan of the shelter below ground. Indicate which is the likely type if you can make it out during the visit. Use the certainty slider in case of uncertainty!
       </desc>
       <opts>
-        <opt>Shelter Type NA</opt>
-        <opt p="gallery/Type1.jpg">Shelter Type I</opt>
-        <opt p="gallery/Type2.jpg">Shelter Type II</opt>
-        <opt p="gallery/Type3.jpg">Shelter Type III</opt>
-        <opt p="gallery/Type4.jpg">Shelter Type IV</opt>
-        <opt p="gallery/Type5.jpg">Shelter Type V</opt>
-        <opt p="gallery/Type6.jpg">Shelter Type VI</opt>
+        <opt p="gallery/types/Type1.jpg">Shelter Type I</opt>
+        <opt p="gallery/types/Type2.jpg">Shelter Type II</opt>
+        <opt p="gallery/types/Type3.jpg">Shelter Type III</opt>
+        <opt p="gallery/types/Type4.jpg">Shelter Type IV</opt>
+        <opt p="gallery/types/Type5.jpg">Shelter Type V</opt>
+        <opt p="gallery/types/Type6.jpg">Shelter Type VI</opt>
         <opt>Bunker</opt>
         <opt>Emergency hospital</opt>
         <opt>Observation post</opt>
         <opt>Other</opt>
       </opts>
     </Feature_Type>
-    <Guide_2 t="webview" f="nolabel">
-<![CDATA[
-<h2>Type/Subtype Illustration</h2><div><img style="width:100%" src="https://www.danskkoldkrigsforening.dk/wp-content/uploads/2020/07/D%C3%A6kningsgrav-2_final.jpg"/></div>
-]]>
-    </Guide_2>
-    <Belongs_to_Shelter_Subtype>
+    <Number_of_Iterations_Subtype f="htmldesc">
+      Number of Iterations/Subtype
       <desc>
-        This attribute is relevant only to shelters and is not mandatory. Shelter subtype letters refer to the number of times the shelter design you recorded above occurs in one location.
+<![CDATA[
+        <p>Please list the number of times that the basic shelter design repeats at your location and indicate if you can reliably gauge it. Each iteration should eventually be recorded separately, so we a have GPS for each entryway.</p>
+
+        <i>Glossary:</i>
+        <ul>
+          <li><b>1</b><img src="files/data/gallery/subtypes/Subtypes1.jpg"    style="width:100%" /></li>
+          <li><b>2</b><img src="files/data/gallery/subtypes/Subtypes2e_m.jpg" style="width:100%" />
+                      <img src="files/data/gallery/subtypes/Subtypes2a_d.jpg" style="width:100%" /></li>
+          <li><b>3</b><img src="files/data/gallery/subtypes/Subtypes3.jpg"    style="width:100%" /></li>
+          <li><b>4</b><img src="files/data/gallery/subtypes/Subtypes4.jpg"    style="width:100%" /></li>
+          <li><b>5</b><img src="files/data/gallery/subtypes/Subtypes5.jpg"    style="width:100%" /></li>
+          <li><b>6</b><img src="files/data/gallery/subtypes/Subtypes6.jpg"    style="width:100%" /></li>
+        </ul>
+
+]]>
       </desc>
       <opts>
         <opt>NA</opt>
+        <opt>1</opt>
         <opt>2</opt>
         <opt>3</opt>
         <opt>4</opt>
         <opt>5</opt>
-        <opt>One type iteration exactly</opt>
+        <opt>Indeterminate</opt>
         <opt>Other</opt>
       </opts>
-    </Belongs_to_Shelter_Subtype>
+    </Number_of_Iterations_Subtype>
     <Feature_Description>
       <desc>
         Comment on feature preservation and, if the feature is not a shelter, describe its characteristics, such as shape, external markers and dimensions here. Authors should explicitly comment on feature subtype listed in the previous box.
       </desc>
     </Feature_Description>
 
+    <Guide t="webview" f="nolabel"/>
     <gps f="notnull"/>
 
     <Landuse_on_Top f="notnull">
@@ -118,6 +124,7 @@
         <opt>Forest</opt>
         <opt>Agricultural field</opt>
         <opt>Grassland or park</opt>
+        <opt>Motorway</opt>
       </opts>
     </Landuse_Around>
     <Overview_Photo f="notnull" t="camera">
@@ -183,7 +190,11 @@
         <opt>OTHER</opt>
       </opts>
     </Entryway_Faces_Direction>
-    <Comments_on_Entryway/>
+    <Comments_on_Entryway_and_Access>
+      <desc>
+        Indicate whether there is easy pedestrian access to the shelter. (eg. that it is not in the middle of a two-lane thoroughfare)
+      </desc>
+    </Comments_on_Entryway_and_Access>
 
     <Entryway_Photo t="camera"/>
 
@@ -234,6 +245,8 @@
         If the shelter is accessible, look inside and provide a description of internal shape, contents, condition and status.
       </desc>
     </Interior_Description>
+
+    <Interior_Photo t="camera"/>
 
     <Comments_and_Recommendations/>
   </Interior>
@@ -377,6 +390,11 @@
 
   addOnEvent("module", "load", "initMap()");
   addOnEvent("Start/Map", "show",  "refreshMap()");
+
+/************************************ WEB *************************************/
+String REF_WEBVIEW = "Shelter/General/Guide";
+
+populateWebViewHtml(REF_WEBVIEW, "<h2>Take GPS point at entryway</h2>");
 ]]></logic>
 
 </module>

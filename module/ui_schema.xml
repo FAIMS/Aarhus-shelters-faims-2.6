@@ -65,13 +65,12 @@
             <General>
               <Shelter_author/>
               <Shelter_timestamp/>
-              <Guide_1/>
               <Feature_ID/>
               <Feature_Source/>
               <Feature_Type/>
-              <Guide_2/>
-              <Belongs_to_Shelter_Subtype/>
+              <Number_of_Iterations_Subtype/>
               <Feature_Description/>
+              <Guide/>
               <Colgroup_1>
                 <Col_1>
                   <Latitude/>
@@ -102,7 +101,7 @@
               <Entryway_Type/>
               <Accessiblity_of_Shelter_During_Visit/>
               <Entryway_Faces_Direction/>
-              <Comments_on_Entryway/>
+              <Comments_on_Entryway_and_Access/>
               <Entryway_Photo/>
               <Entryway_Photo_Button_1/>
               <Emergency_Exit_Shape/>
@@ -114,6 +113,8 @@
             </Access>
             <Interior>
               <Interior_Description/>
+              <Interior_Photo/>
+              <Interior_Photo_Button_1/>
               <Comments_and_Recommendations/>
             </Interior>
           </Shelter>
@@ -263,9 +264,6 @@
         <input faims_attribute_name="Shelter timestamp" faims_attribute_type="measure" ref="Shelter_timestamp" faims_read_only="true">
           <label>{Shelter_timestamp}</label>
         </input>
-        <input faims_web="true" ref="Guide_1">
-          <label/>
-        </input>
         <input faims_attribute_name="Feature ID" faims_attribute_type="measure" ref="Feature_ID" faims_style_class="required">
           <label>{Feature_ID}</label>
         </input>
@@ -283,11 +281,8 @@
             <value>Options not loaded</value>
           </item>
         </select1>
-        <input faims_web="true" ref="Guide_2">
-          <label/>
-        </input>
-        <select1 faims_attribute_name="Belongs to Shelter Subtype" faims_attribute_type="vocab" ref="Belongs_to_Shelter_Subtype">
-          <label>{Belongs_to_Shelter_Subtype}</label>
+        <select1 faims_attribute_name="Number of Iterations Subtype" faims_attribute_type="vocab" ref="Number_of_Iterations_Subtype" faims_html_description="true">
+          <label>{Number_of_Iterations_Subtype}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
@@ -295,6 +290,9 @@
         </select1>
         <input faims_attribute_name="Feature Description" faims_attribute_type="measure" ref="Feature_Description">
           <label>{Feature_Description}</label>
+        </input>
+        <input faims_web="true" ref="Guide">
+          <label/>
         </input>
         <group ref="Colgroup_1" faims_style="orientation">
           <label/>
@@ -386,8 +384,8 @@
             <value>Options not loaded</value>
           </item>
         </select1>
-        <input faims_attribute_name="Comments on Entryway" faims_attribute_type="measure" ref="Comments_on_Entryway">
-          <label>{Comments_on_Entryway}</label>
+        <input faims_attribute_name="Comments on Entryway and Access" faims_attribute_type="measure" ref="Comments_on_Entryway_and_Access">
+          <label>{Comments_on_Entryway_and_Access}</label>
         </input>
         <select faims_sync="true" type="camera" faims_attribute_name="Entryway Photo" faims_attribute_type="measure" ref="Entryway_Photo">
           <label>{Entryway_Photo}</label>
@@ -435,6 +433,16 @@
         <input faims_attribute_name="Interior Description" faims_attribute_type="measure" ref="Interior_Description">
           <label>{Interior_Description}</label>
         </input>
+        <select faims_sync="true" type="camera" faims_attribute_name="Interior Photo" faims_attribute_type="measure" ref="Interior_Photo">
+          <label>{Interior_Photo}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Interior_Photo_Button_1">
+          <label>{Interior_Photo_Button_1}</label>
+        </trigger>
         <input faims_attribute_name="Comments and Recommendations" faims_attribute_type="measure" ref="Comments_and_Recommendations">
           <label>{Comments_and_Recommendations}</label>
         </input>

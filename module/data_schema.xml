@@ -14,19 +14,17 @@
       <formatString>-$1</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
-        <term>{Shelter_Type_NA}
+        <term pictureURL="files/data/gallery/types/Type1.jpg">{Shelter_Type_I}
 <description> </description></term>
-        <term pictureURL="files/data/gallery/Type1.jpg">{Shelter_Type_I}
+        <term pictureURL="files/data/gallery/types/Type2.jpg">{Shelter_Type_II}
 <description> </description></term>
-        <term pictureURL="files/data/gallery/Type2.jpg">{Shelter_Type_II}
+        <term pictureURL="files/data/gallery/types/Type3.jpg">{Shelter_Type_III}
 <description> </description></term>
-        <term pictureURL="files/data/gallery/Type3.jpg">{Shelter_Type_III}
+        <term pictureURL="files/data/gallery/types/Type4.jpg">{Shelter_Type_IV}
 <description> </description></term>
-        <term pictureURL="files/data/gallery/Type4.jpg">{Shelter_Type_IV}
+        <term pictureURL="files/data/gallery/types/Type5.jpg">{Shelter_Type_V}
 <description> </description></term>
-        <term pictureURL="files/data/gallery/Type5.jpg">{Shelter_Type_V}
-<description> </description></term>
-        <term pictureURL="files/data/gallery/Type6.jpg">{Shelter_Type_VI}
+        <term pictureURL="files/data/gallery/types/Type6.jpg">{Shelter_Type_VI}
 <description> </description></term>
         <term>{Bunker}
 <description> </description></term>
@@ -67,14 +65,30 @@
 <description> </description></term>
       </lookup>
     </property>
-    <property name="Belongs to Shelter Subtype" type="vocab">
+    <property name="Number of Iterations Subtype" type="vocab">
       <description>
-        This attribute is relevant only to shelters and is not mandatory. Shelter subtype letters refer to the number of times the shelter design you recorded above occurs in one location.
+
+        &lt;p&gt;Please list the number of times that the basic shelter design repeats at your location and indicate if you can reliably gauge it. Each iteration should eventually be recorded separately, so we a have GPS for each entryway.&lt;/p&gt;
+
+        &lt;i&gt;Glossary:&lt;/i&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;b&gt;1&lt;/b&gt;&lt;img src="files/data/gallery/subtypes/Subtypes1.jpg"    style="width:100%" /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;b&gt;2&lt;/b&gt;&lt;img src="files/data/gallery/subtypes/Subtypes2e_m.jpg" style="width:100%" /&gt;
+                      &lt;img src="files/data/gallery/subtypes/Subtypes2a_d.jpg" style="width:100%" /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;b&gt;3&lt;/b&gt;&lt;img src="files/data/gallery/subtypes/Subtypes3.jpg"    style="width:100%" /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;b&gt;4&lt;/b&gt;&lt;img src="files/data/gallery/subtypes/Subtypes4.jpg"    style="width:100%" /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;b&gt;5&lt;/b&gt;&lt;img src="files/data/gallery/subtypes/Subtypes5.jpg"    style="width:100%" /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;b&gt;6&lt;/b&gt;&lt;img src="files/data/gallery/subtypes/Subtypes6.jpg"    style="width:100%" /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+
       </description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{NA}
+<description> </description></term>
+        <term>{1}
 <description> </description></term>
         <term>{2}
 <description> </description></term>
@@ -84,7 +98,7 @@
 <description> </description></term>
         <term>{5}
 <description> </description></term>
-        <term>{One_type_iteration_exactly}
+        <term>{Indeterminate}
 <description> </description></term>
         <term>{Other}
 <description> </description></term>
@@ -169,6 +183,8 @@
         <term>{Agricultural_field}
 <description> </description></term>
         <term>{Grassland_or_park}
+<description> </description></term>
+        <term>{Motorway}
 <description> </description></term>
       </lookup>
     </property>
@@ -271,8 +287,10 @@
 <description> </description></term>
       </lookup>
     </property>
-    <property name="Comments on Entryway" type="measure">
-      <description></description>
+    <property name="Comments on Entryway and Access" type="measure">
+      <description>
+        Indicate whether there is easy pedestrian access to the shelter. (eg. that it is not in the middle of a two-lane thoroughfare)
+      </description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
@@ -340,6 +358,11 @@
       <description>
         If the shelter is accessible, look inside and provide a description of internal shape, contents, condition and status.
       </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Interior Photo" type="file" file="true" thumbnail="true">
+      <description></description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
