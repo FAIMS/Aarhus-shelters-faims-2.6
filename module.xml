@@ -391,6 +391,8 @@
   addOnEvent("module", "load", "initMap()");
   addOnEvent("Start/Map", "show",  "refreshMap()");
 
+  delOnEvents("Start/Map/Save_Map_Settings_1", "click");
+
 /************************************ WEB *************************************/
 String REF_WEBVIEW = "Shelter/General/Guide";
 

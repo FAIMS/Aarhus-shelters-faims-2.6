@@ -55,10 +55,9 @@
                   <Center_Me_1/>
                 </Col_1>
                 <Col_2>
-                  <Save_Map_Settings_1/>
+                  <Create_Shape/>
                 </Col_2>
               </Colgroup_1>
-              <Create_Shape/>
             </Map>
           </Start>
           <Shelter>
@@ -244,14 +243,11 @@
           </group>
           <group ref="Col_2" faims_style="even">
             <label/>
-            <trigger ref="Save_Map_Settings_1">
-              <label>{Save_Map_Settings_1}</label>
+            <trigger ref="Create_Shape">
+              <label>{Create_Shape}</label>
             </trigger>
           </group>
         </group>
-        <trigger ref="Create_Shape">
-          <label>{Create_Shape}</label>
-        </trigger>
       </group>
     </group>
     <group ref="Shelter" faims_archent_type="Shelter">
