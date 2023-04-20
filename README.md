@@ -1,24 +1,32 @@
-# [Name of the module/project with spaces between words]
-[One-line description of the project]
+# Shelter Monitoring Module
+Data capture system for urban Cold-War civil defense amenity documentation in the Aarhus municipality, Denmark
 
-[5 keywords]
+civil-defense, urban preparedness, mobile computing, cold-war
 
 ---
 
 ## About this module:
-[Short description: purpose of the module, who commissioned it, where it's going to be used, what it can do]
+This module supports precise documentation of spatial location, layout, and condition of surviving shelters (~250) and other civil defenses around the municipality Aarhus, with focus on the urban environment. The initial prototype and data collection was supported by the [SDAM](https://sdam.au.dk) and [SHAPE](https://shape.au.dk) projects of Aarhus University. Continued use and development is funded by the Augustinus Fonden via the MELICA project.
+This module is in use in 2023-2024 and has the following functionality: 
+
+* simultaneous data entry by multiple users
+* online and offline functionality (the latter with local server)
+* loading of own raster and vector data
+* creation of points, lines and polygons
+* automatic GPS data capture from on-device and bluetooth GPS
+* structured data entry including picture dictionaries, dropdowns
 
 ## Authorship:
-This module was co-developed by [Name of the researcher/client, organisation] and Penny Crook [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-8509-7865), Petra Hermankova [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-6349-0540), and Christian-Nassif Haynes at the FAIMS Project.
+This module was co-developed by Adela Sobotkova, Aarhus University [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-4541-3963) and Christian-Nassif Haynes at the FAIMS Project [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-4260-8191).
 
 ## Funding:
-Development of this module was funded by [funding agency, grant, etc.]
+Development of this module was funded by [SDAM](https://sdam.au.dk) and [SHAPE](https://shape.au.dk) projects
 
 ## Date of release:
-Month 2020 
+April 2023 
 
 ### Latest updates:
-Month 2020
+April 2023
 
 ## FAIMS Mobile version:
 FAIMS **v2.6** (Android 7+)
@@ -33,22 +41,18 @@ This module is licensed under an international Creative Commons Licence (**CC-BY
 
 ## This module contains the following FAIMS features:
 [DELETE THOSE THAT DON'T APPLY]
-* dynamic UI on radiobutton selection
 * coordinates from internal GPS
-* hierarchical dropdowns
 * controlled vocabularies
 * picture galleries
 * customised validation
-* password protected login
 
 ## This module can be used with no or minor modification for:
-* A
-* B
-* C
+* spatial data collection supported via user-provided map data and GPS
+* repeat feature monitoring
 
 ## Contact info:
 
-For more details about the **[Project]**, please visit [http://www.website.com/]. If you have any questions about the project, contact [Person at person@email.com].
+For more details about the **Shelter monitoring project**, please visit [http://www.website.com/]. If you have any questions about the project, contact Adela at adela@cas.au.dk.
 
 If you have any questions about the module, please contact the FAIMS team at **enquiries@fedarch.org** and we will get back to you as soon as possible.
 
