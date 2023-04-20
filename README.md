@@ -35,12 +35,10 @@ FAIMS **v2.6** (Android 7+)
 This module is licensed under an international Creative Commons Licence (**CC-BY-SA 4.0 International**). 
 
 ## Access:
-[ONLY FOR DEMO MODULES: This module is part of the **FAIMS Demo library** on our publicly accessible Demo server (http://demo.fedarch.org/). See [Instructions 101: How to access the Demo server](https://www.fedarch.org/resources/handouts.pdf). Note: you will need and **Android** device!]
-
-[FOR OTHER MODULES: The module can be downloaded from this GitHub repository and reinstantiated on a FAIMS server, using the following [Instructions 103: How to Deploy a module](https://www.fedarch.org/resources/handouts.pdf).] 
+The module can be downloaded from this GitHub repository and reinstantiated on a FAIMS server, using the following [Instructions 103: How to Deploy a module](https://www.fedarch.org/resources/handouts.pdf). Check demo@fedarch.org in case an early version is uploaded here.
 
 ## This module contains the following FAIMS features:
-[DELETE THOSE THAT DON'T APPLY]
+
 * coordinates from internal GPS
 * controlled vocabularies
 * picture galleries
@@ -52,7 +50,7 @@ This module is licensed under an international Creative Commons Licence (**CC-BY
 
 ## Contact info:
 
-For more details about the **Shelter monitoring project**, please visit [http://www.website.com/]. If you have any questions about the project, contact Adela at adela@cas.au.dk.
+For more details about the **Shelter monitoring project**, please visit [TBD: http://www.website.com/]. If you have any questions about the project, contact Adela at adela@cas.au.dk.
 
 If you have any questions about the module, please contact the FAIMS team at **enquiries@fedarch.org** and we will get back to you as soon as possible.
 
