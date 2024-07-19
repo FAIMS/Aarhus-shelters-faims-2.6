@@ -52,7 +52,7 @@ The module can be downloaded from this GitHub repository and reinstantiated on a
 
 ## Contact info:
 
-For more details about the **Shelter monitoring project**, please visit [TBD: http://www.website.com/]. If you have any questions about the project, contact Adela at adela@cas.au.dk.
+For more details about the **Shelter monitoring project**, please visit [https://cas.au.dk/en/melica]. If you have any questions about the project, contact Adela at adela@cas.au.dk.
 
 If you have any questions about the module, please contact the FAIMS team at **enquiries@fedarch.org** and we will get back to you as soon as possible.
 
@@ -60,14 +60,23 @@ If you have any questions about the module, please contact the FAIMS team at **e
 ## Screenshots from the module:
 
 <p align="left">
-  <img src="https://github.com/FAIMS/link to where the screenshot lives.png" width="250"/>
-  <img src="https://github.com/FAIMS/link to where the screenshot lives.png" width="250"/>
-  <img src="https://github.com/FAIMS/link to where the screenshot lives.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/01.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/02.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/03.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/04.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/05.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/11.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/12.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/13.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/14.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/15.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/19.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/21.png" width="250"/>
 </p>
 
 ---
 ## Photos from the field: 
 
 <p align="left">
-  <img src="https://github.com/FAIMS/link to where the image lives.jpg" />
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/16.jpg" />
 </p>
