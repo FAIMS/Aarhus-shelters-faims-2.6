@@ -63,29 +63,29 @@ If you have any questions about the module, please contact the FAIMS team at **e
 ## Screenshots from the module:
 
 <p align="left">
-  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/01.png" width="250"/>
-  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/02.png" width="250"/>
-  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/03.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/blob/master/screenshots/01.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/blob/master/screenshots/02.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/blob/master/screenshots/03.png" width="250"/>
 </p>
 <p align="left">
-  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/04.png" width="250"/>
-  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/05.png" width="250"/>
-  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/11.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/blob/master/screenshots/04.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/blob/master/screenshots/05.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/blob/master/screenshots/11.png" width="250"/>
 </p>
 <p align="left">
-  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/12.png" width="250"/>
-  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/13.png" width="250"/>
-  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/14.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/blob/master/screenshots/12.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/blob/master/screenshots/13.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/blob/master/screenshots/14.png" width="250"/>
 </p>
 <p align="left">
-  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/15.png" width="250"/>
-  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/19.png" width="250"/>
-  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/21.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/blob/master/screenshots/15.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/blob/master/screenshots/19.png" width="250"/>
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/blob/master/screenshots/21.png" width="250"/>
 </p>
 
 ---
 ## Photos from the field: 
 
 <p align="left">
-  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/16.jpg" />
+  <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/blob/master/screenshots/16.jpg" />
 </p>
