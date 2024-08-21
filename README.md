@@ -21,6 +21,9 @@ This module is in use in 2023-2024 and has the following functionality:
 ## Authorship:
 This module was co-developed by Adela Sobotkova, Aarhus University [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-4541-3963) and Christian-Nassif Haynes at the FAIMS Project [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-4260-8191).
 
+## Cite us:
+Sobotkova, Adela, Christian Nassif-Haynes. 2023. Aarhus Civil Defense Shelter Monitoring Module (version xxxxxx). Github. https://github.com/FAIMS/Aarhus-shelters-faims-2.6/releases/tag/fieldwork-2023.
+
 ## Funding:
 Development of this module was funded by [SDAM](https://sdam.au.dk) and [SHAPE](https://shape.au.dk) projects
 
@@ -54,7 +57,7 @@ The module can be downloaded from this GitHub repository and reinstantiated on a
 
 For more details about the **Shelter monitoring project**, please visit [https://cas.au.dk/en/melica]. If you have any questions about the project, contact Adela at adela@cas.au.dk.
 
-If you have any questions about the module, please contact the FAIMS team at **enquiries@fedarch.org** and we will get back to you as soon as possible.
+If you have any questions about the module, please contact the FAIMS team at **enquiries@faims.edu.au** and we will get back to you as soon as possible.
 
 ---
 ## Screenshots from the module:
@@ -63,12 +66,18 @@ If you have any questions about the module, please contact the FAIMS team at **e
   <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/01.png" width="250"/>
   <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/02.png" width="250"/>
   <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/03.png" width="250"/>
+</p>
+<p align="left">
   <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/04.png" width="250"/>
   <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/05.png" width="250"/>
   <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/11.png" width="250"/>
+</p>
+<p align="left">
   <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/12.png" width="250"/>
   <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/13.png" width="250"/>
   <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/14.png" width="250"/>
+</p>
+<p align="left">
   <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/15.png" width="250"/>
   <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/19.png" width="250"/>
   <img src="https://github.com/FAIMS/Aarhus-shelters-faims-2.6/tree/master/screenshots/21.png" width="250"/>
